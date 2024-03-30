@@ -14,13 +14,13 @@ def doAdd (students):
 
 def readModules ():
     modules = []
-    moduleName = input("\tEnter the first Module name(blank to:").strip ()
+    moduleName = input("\tEnter the first Module name(blank to quit):").strip ()
     while moduleName != "":
         module = {}
         module ["name"]= moduleName
         module["grade"]=int(input("\t\tEnter grade:"))
         modules.append(module)
-        moduleName = input("\tEnter next module name(blank to:").strip()
+        moduleName = input("\tEnter next module name(blank to quit):").strip()
     return modules
 
 def doView(students):
@@ -30,9 +30,9 @@ students = []
 choice = displayMenu ()
 while (choice != 'q'):
     if choice == 'a':
-        doAdd()
+        doAdd(students)
     elif choice == 'v':
-        doView()
+        doView(students)
     elif choice != 'q':
         print ("\n\n please select either a,v or q")
     choice=displayMenu()
